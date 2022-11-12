@@ -1,0 +1,10 @@
+.main-header{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+.pColored{
+    background-color: aquamarine;
+}

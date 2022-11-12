@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-ng-app';
+  // listenNumber = 0;
+
+  // onListening(numbers: number): void {
+  //   this.listenNumber = numbers;
+  // }
 }
