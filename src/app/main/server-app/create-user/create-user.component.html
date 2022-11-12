@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">User Name</span>
+            <input #name required type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">User Status</span>
+            <select  #status class="form-select" aria-label="Default select example">
+                <option selected>Active</option>
+                <option value="Inactive">Inactive</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <button (click)= "onCreateUser(name, status)" class="btn btn-primary">Create</button>
+        </div>
+    </div>
+</div>
+<hr>

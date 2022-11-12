@@ -1,0 +1,32 @@
+
+    <div class="row">
+        <div class ="col col-md-6"><h2>Active User</h2></div>
+    </div>
+
+    <div class="row" *ngIf="activeUser.length===0; else hasActiveUser">
+        <div class="col col-md-6">
+            <h3>No User Available!</h3>
+        </div>
+    </div>
+    <ng-template #hasActiveUser>
+        <div class="row" *ngFor="let active of activeUser">
+            <div class="col col-md-4">
+                <h4>
+                    {{active.name}}
+                </h4>
+                </div>
+                <div class="col col-md-2">
+                    <button
+                    class= "btn btn-danger" 
+                    (click) ="this.user.removeUser(active)">
+                    Delete
+                    </button>
+                    <button
+                    class= "btn btn-success" 
+                    (click) ="this.user.toggleStatus(active)">
+                        {{active.status.status}}
+                    </button>
+                </div>
+            </div>
+    </ng-template>
+    <hr>

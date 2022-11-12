@@ -1,0 +1,11 @@
+<div class="row recipe-item" *ngFor="let recipe of recipeList" (click) = 'onSingleRecipeClick(recipe)'>
+    <div class="col-md-6">
+        <div class="card">
+            <h6>
+                <span class="card-title">
+                    {{recipe.name}} 
+                </span>
+            </h6>
+        </div>    
+        </div>
+</div>
