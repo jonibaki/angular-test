@@ -1,3 +1,7 @@
 .recipe-item:hover{
     background-color: cadetblue;
 }
+img{
+    width: 100px;
+    height: 100px;
+}

@@ -14,6 +14,7 @@ import { EvenComponent } from './main/even-odd-app/even/even.component';
 import { ActiveUserComponent } from './main/server-app/active-user/active-user.component';
 import { InactiveUserComponent } from './main/server-app/inactive-user/inactive-user.component';
 import { CreateUserComponent } from './main/server-app/create-user/create-user.component';
+import { IngredientListComponent } from './main/shopping-app/RecipeBook/ingredient-list/ingredient-list.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CreateUserComponent } from './main/server-app/create-user/create-user.c
     EvenComponent,
     ActiveUserComponent,
     InactiveUserComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    IngredientListComponent
   ],
   imports: [
     BrowserModule,

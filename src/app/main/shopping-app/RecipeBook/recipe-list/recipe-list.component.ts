@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Ingredient } from '../../Shopping/Model/ingredient';
 import { Recipe } from '../Model/recipe';
 
 @Component({
@@ -7,15 +8,15 @@ import { Recipe } from '../Model/recipe';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-  public recipe: Recipe = {} as Recipe;
-  constructor() { }
-
+  public ingredientList: Ingredient[];
   ngOnInit(): void {
   }
 
   onSingleRecipeClick(recipe: Recipe)
   {
-    this.recipe = recipe;
+    this.ingredientList =[];
+    this.ingredientList = recipe.ingredients;
+    console.log(this.ingredientList);
   }
 
 }

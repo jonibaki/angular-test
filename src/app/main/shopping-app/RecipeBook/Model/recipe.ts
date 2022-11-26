@@ -1,13 +1,16 @@
-export class Recipe{
+import { Injectable } from "@angular/core";
+import { Ingredient } from "../../Shopping/Model/ingredient";
+
+@Injectable({ providedIn: "root" })
+export class Recipe {
     name: string;
-    price: number;
     description: string;
     photo?: string;
-    constructor (name: string, price: number, description: string, photo?: string)
-    { 
-        this.name  = name; 
-        this.price = price; 
+    ingredients: Ingredient[];
+    constructor(name: string,description: string, ingredients: Ingredient[], photo?: string) {
+        this.name = name;
         this.description = description;
+        this.ingredients = ingredients;
         this.photo = photo;
     }
 }

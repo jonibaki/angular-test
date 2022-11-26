@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Ingredient } from '../../Shopping/Model/ingredient';
 import { Recipe } from '../Model/recipe';
 
 @Component({
@@ -8,22 +9,27 @@ import { Recipe } from '../Model/recipe';
 })
 export class RecipeItemComponent implements OnInit {
   @Output() public recipeOut: EventEmitter<Recipe> = new EventEmitter<Recipe>();
-  recipeList:Recipe[]=[];
+  recipeList: Recipe[] = [];
+  ingredient:Ingredient[] =[
+  new Ingredient('Meat', 12, 'This is an item to be eaten with something delicious', 'assets/icon/potato.png'),
+  new Ingredient('Rice', 12, 'This is an item to be eaten with something delicious', 'assets/icon/potato.png'),
+  new Ingredient('Milk', 12, 'This is an item to be eaten with something delicious', 'assets/icon/potato.png'),]
+  ingredient2:Ingredient[] =[new Ingredient('Potato', 12, 'This is an item to be eaten with something delicious','assets/icon/potato.png'),
+  new Ingredient('Orange', 12, 'This is an item to be eaten with something delicious','assets/icon/potato.png'),
+  new Ingredient('Meat', 12, 'This is an item to be eaten with something delicious', 'assets/icon/potato.png'),]
 
   constructor() { }
 
   ngOnInit(): void {
-    this.recipeList.push(new Recipe('Potato', 12, 'Pot', 'assets/icon/potato.png'));
-    this.recipeList.push(new Recipe('Orange', 12, 'Pot', 'assets/icon/potato.png'));
-    this.recipeList.push(new Recipe('Meat', 12, 'Pot', 'assets/icon/potato.png'));
-    this.recipeList.push(new Recipe('Rice', 12, 'Pot', 'assets/icon/potato.png'));
-    this.recipeList.push(new Recipe('Milk', 12, 'Pot', 'assets/icon/potato.png'));
+    this.recipeList.push(new Recipe('Chicken Curry', 'This is an item to be eaten with something delicious', this.ingredient, 'assets/icon/potato.png'));
+    this.recipeList.push(new Recipe('Rogan Josh', 'This is an item to be eaten with something delicious',  this.ingredient, 'assets/icon/potato.png'));
+    this.recipeList.push(new Recipe('Meat Buna', 'This is an item to be eaten with something delicious',  this.ingredient2, 'assets/icon/potato.png'));
+    this.recipeList.push(new Recipe('Lamb Briyani', 'This is an item to be eaten with something delicious',  this.ingredient2, 'assets/icon/potato.png'));
+    this.recipeList.push(new Recipe('Milk Shake', 'This is an item to be eaten with something delicious', this.ingredient2, 'assets/icon/potato.png'));
   }
-  
-  public onSingleRecipeClick(recipe: Recipe) 
-  {
-    console.log(recipe);
-    this.recipeOut.emit(recipe); 
+
+  public onSingleRecipeClick(recipe: Recipe) {
+    this.recipeOut.emit(recipe);
   }
 
 }
