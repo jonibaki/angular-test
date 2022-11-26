@@ -1,0 +1,20 @@
+<div class="header"><h4>Ingredients List</h4></div>
+<div class="col-md-2">
+    <div class="row ingredient-item" *ngFor="let ingredient of ingredientList" (click) = 'onSingleIngredientClick(ingredient)'>
+        <div class="col-md-6">
+            <div class="card">
+                <h5>
+                    <span class="card-title">
+                        {{ingredient.name}} 
+                    </span>
+                </h5>
+            </div>    
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <app-recipe-detail
+    [ingredient]="singleIngredient"
+    >
+    </app-recipe-detail>
+</div>
